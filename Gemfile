@@ -51,7 +51,7 @@ gem 'popper_js', '~> 2.9', '>= 2.9.3'
 gem 'magnific-popup-rails', '~> 1.1'
 gem 'jquery-turbolinks', '~> 2.1'
 
-gem 'multiverse'
+gem 'secondbase'
 gem 'pg'
 gem 'whenever', require: false
 

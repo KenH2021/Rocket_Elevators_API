@@ -1,4 +1,4 @@
-class FactQuote < PostgresDbRecord
+class FactQuote < SecondBase::Base
 
   def self.getQuotesData
     quotes = Quote.where({ created_at: (Time.now - 25.hour)..Time.now })

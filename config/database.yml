@@ -2,6 +2,8 @@
 default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: lemath
+  password: kintaro1
   
 
 development:
@@ -9,29 +11,36 @@ development:
   database: Rocket_Elevators_Information_System_development
   adapter: mysql2
   socket: /var/run/mysqld/mysqld.sock
-  username: root  
-  password: rootuser
 
-production: #les infos pour mysql
+test:
+  <<: *default
+  database: Rocket_Elevators_Information_System_test
+  adapter: mysql2
+  socket: /var/run/mysqld/mysqld.sock
+
+
+production:
   <<: *default
   database: Rocket_Elevators_Information_System_production
-  username: Rocket_Elevators 
+  username: Rocket_Elevators
   password: <%= ENV['qetuo2468'] %>
   adapter: mysql2
   socket: /var/run/mysqld/mysqld.sock
 
-postgres_db_development:
-  <<: *default
-  database: SamaelTessier
-  host: codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com
-  adapter: postgresql
-  username: codeboxx
-  password: Codeboxx1!
-  
+secondbase:
+  development:
+    <<: *default
+    database: postgres_db_development
+    adapter: postgresql
 
-postgres_db_production: #les infos pour postgresql
-  database: SamaelTessier
-  host: codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com
-  adapter: postgresql
-  username: codeboxx
-  password: Codeboxx1!
+  test:
+    <<: *default
+    database: postgres_db_test
+    adapter: postgresql
+
+  production:
+    <<: *default
+    url: <%= ENV['POSTGRES_DB_DATABASE_URL'] %>
+    adapter: postgresql
+    username: codeboxx
+    password: Codeboxx1!

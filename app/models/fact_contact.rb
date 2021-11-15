@@ -1,4 +1,4 @@
-class FactContact < PostgresDbRecord
+class FactContact < SecondBase::Base
   def self.getContactsData
     contacts = Lead.where({ created_at: (Time.now - 25.hour)..Time.now })
     

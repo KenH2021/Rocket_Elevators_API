@@ -1,4 +1,4 @@
-class DimTime < PostgresDbRecord
+class DimTime < SecondBase::Base
   def self.buildDimension(id, form_type)
     if form_type == "quote"
       form = Quote.find(id)

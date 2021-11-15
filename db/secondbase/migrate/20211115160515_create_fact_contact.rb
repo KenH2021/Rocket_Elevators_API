@@ -1,4 +1,4 @@
-class CreateFactContacts < ActiveRecord::Migration[5.2]
+class CreateFactContact < ActiveRecord::Migration[5.2]
   def change
     create_table :fact_contacts do |t|
       t.integer :ContactId
@@ -6,7 +6,6 @@ class CreateFactContacts < ActiveRecord::Migration[5.2]
       t.string :Company_Name
       t.string :Email
       t.string :Project_Name
-
       t.timestamps
     end
   end

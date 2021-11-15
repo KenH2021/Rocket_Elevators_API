@@ -1,4 +1,4 @@
-class CreateFactElevators < ActiveRecord::Migration[5.2]
+class CreateFactElevator < ActiveRecord::Migration[5.2]
   def change
     create_table :fact_elevators do |t|
       t.integer :SerialNumber
@@ -6,7 +6,6 @@ class CreateFactElevators < ActiveRecord::Migration[5.2]
       t.integer :BuildingId
       t.integer :CustomerId
       t.string :Building_City
-
       t.timestamps
     end
   end

@@ -1,4 +1,4 @@
-class FactElevator < PostgresDbRecord
+class FactElevator < SecondBase::Base
 
   def self.getElevatorsData
     elevators = Elevator.where({ created_at: (Time.now - 25.hour)..Time.now })
