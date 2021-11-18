@@ -70,6 +70,7 @@ group :development, :test do
   gem 'capistrano-bundler', '>= 1.1.0'
   gem 'rvm1-capistrano3', require: false
   gem 'capistrano3-puma'
+  
 
 end
 
@@ -96,3 +97,9 @@ gem 'faker'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "jquery-datatables", "~> 1.10"
+# Dropbox API gems
+gem 'dropbox_api'
+gem 'activestorage-dropbox', '~> 1.0'
+gem 'omniauth'
+gem 'omniauth-dropbox-oauth2'
+gem 'faraday', '~> 1.0.0'
