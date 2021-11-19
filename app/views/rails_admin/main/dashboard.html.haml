@@ -43,10 +43,9 @@
           report = new Audio();
           report.src = '/output/output.mp3' 
           const promise = report.play();
-          console.log(promise)
           if (promise !== undefined) {
             promise.then(() => {
-                console.log("pouet")
+              
               })
               .catch(error => {
                 console.log(error);

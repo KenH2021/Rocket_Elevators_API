@@ -8,7 +8,6 @@ class VoiceReportController < ApplicationController
     #{Battery.count} Batteries are deployed across #{Address.distinct.count(:city)} cities.
     "
     response = client.synthesize_speech input: {'text': message}, voice: {'language_code': 'en-US'}, audio_config: {'audio_encoding': 'MP3'}
-    print response
     File.open Rails.root.join(
       'public',
       'output',
