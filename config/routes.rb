@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 
   get 'home/residential', to: 'home#residential'
   get 'home/commercial', to: 'home#commercial'
+  resources :leads
+  post '/leads', to: 'leads#create'
+
+  get 'dropbox/auth_callback' => 'dropbox#auth_callback'
 
 
 end

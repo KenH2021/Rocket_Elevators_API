@@ -23,6 +23,7 @@ class LeadsController < ApplicationController
   def create
     @lead = Lead.new(lead_params)
 
+
     respond_to do |format|
       if @lead.save
         format.html { redirect_to @lead, notice: "Lead was successfully created." }
