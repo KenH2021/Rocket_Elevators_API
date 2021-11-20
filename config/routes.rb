@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get 'voice_report/report'
   resources :elevators
   resources :columns
   resources :batteries

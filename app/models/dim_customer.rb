@@ -1,4 +1,4 @@
-class DimCustomer < PostgresDbRecord
+class DimCustomer < SecondBase::Base
   def self.buildDimension(customer_id)
     customer = Customer.find(customer_id)
     dimension = DimCustomer.find_or_create_by(Company_Name: customer.company_name)

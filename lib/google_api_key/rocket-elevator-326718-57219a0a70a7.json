@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "rocket-elevator-326718",
+  "private_key_id": "57219a0a70a704875eee1b799096015bf868b392",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCcU6Ukw+oTwJwG\nK7lsBtXVz30vM6MU3pZKdDDazerQr14TZ53Qc4LsseDnYHhD7Ud2kjmp+XMJn9r5\nHDWlS9VcylzZHo7XqfIs7Xdw7/Koi/W1IMbxa2QaAjG5E7+uLJRLUzH/+UegVvK2\nZ1nb4tnKWQxjy1i7YIEAfvjxxbR0/hT9hztZpzTeslhDv5bBDlQKlQeBCQfBr38m\noWZVKAOtioL2pxwtC3742S0Me94Ls2kVzegZnVik9gJO4wrQgPtsoyLQmsHiF2E/\nf+vkVcJ1tAcc7lc6GNs5NtYUy+7KtLpIWtsH6i6D8StrH+RmYjXJE/MyGR5fS4B1\n3qGod/InAgMBAAECggEAOXMB4zd+bADiNeBWtazzY65rZm/XFGHSoIz/sUFwdH2m\nGIKBPCxfJoYeTVmmCOyH0TrepykNjjFpgxfLXTI3uHCD26S/wODrJ3ijZuU/a5J3\n2zcu9WTOdkJtLINl82fdnar22oetO28IpmDn5IeDGzpLc9c0hjPqZJjE+vD5pu5v\n4ZrH/KafZwrquXHjp3a5KcwBs3NN0hb6tthWTYAnrhUniKj5ZMwBLpHtBXlIx8Ar\nqlvGpUvOC1DsBs79XTrLPBwURs4xRI5ya6snr/TpJ5JynuSYQXsst9ou6pXMf8K/\nX4/DlpTs2TUUwN0FSy7hxheaolrWzhzKuPwIjuI1OQKBgQDS5LF9E19ZCgQQlFlF\nAg0Yt+bpTjNNW+PS5CePBA5SNFJQjRVilefEo4nTylOt+M+Uy2MjqbkmDSC/SDA8\nyGexaFv3DkQYJRKfNFGF2QHEmMvGbS+D6hWdQWfOyeB4UkexbEjBJl0CvlUCJgXv\n7moN83vyaVlowSPy35jHF88R7wKBgQC9wzLe0m5xOnUr7Ex5J9TqxN+lGvo8l08J\nViUSQJquuSwP+cE8sv/4qDIV3AXMqzJoJgHYlYOd4MmHYAQMLw2jzY4qNANnRWO1\nkawYpBMX9/EOlPqLVJxNEQnLcnlmQ/fNorKqM4TKYqhmtSF1IM1pGn5qg4FEKWmZ\ngTgLwhJ7SQKBgAkrzNQlnYXfu6GE8gTgO/WROcd3kR+SGWw4Y8gCYyUMBXBfUkjB\nQBz7B6lgKRdttIlB9wO8A8M12vC2kPJzvJ6obSdnRWrPYenueoUZlMwZ4PK2GNTh\nvyLhj0Qc31gcK+X5UYikxHK0GDpJsQRoF9CXgBJgpnS5wXh0ZM5zqJudAoGALHyK\nfHpQsfLGbVmkQ/L2k2M8GvTMHVBLkyDC6BiFKtj2X3hpuNUt9RlZRI6kPWsVEh12\n6VOD24tLM5Vq3YBabkBOR86RzbASxAo2kkBEyaWyuXxrkCZxzg9kgHGBzFu6yFaQ\nFB6nztp6KDnmchMSlMVFRas2rsgWnYoRnZANzSECgYEAzdBmY/yKIjtGaeF0GfZX\nnHqH+pJ2x116qnL8ugU5ACqlQRT1tPQN4+B+twqmRCWuly9fTbVZ5TlojfGK3qIp\n2q/CV5zQuE/pb8N9UNSblcRjtTwG7guJZL0ACLkGcnhmbU3qKM/+9lWCNTYZxzoO\n8kG8QWrLSUae7XGpXg3pkaM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "rocket-elevator@rocket-elevator-326718.iam.gserviceaccount.com",
+  "client_id": "114626278027160551679",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rocket-elevator%40rocket-elevator-326718.iam.gserviceaccount.com"
+}

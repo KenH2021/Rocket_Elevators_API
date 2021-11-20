@@ -110,7 +110,7 @@ end
         serial_number:Faker::Number.number(digits: 9),
         model:["Standard ","Premium","Excelium"].sample,
         type_of_building:["Residential ","Commercial","Corporate","Hybrid"].sample,
-        status:["Online","Offline","Moving","Idle"].sample,
+        status:["Online","Offline","Intervention"].sample,
         date_of_commissioning:Faker::Date.between(from: 3.years.ago, to: Date.today),
         date_of_last_inspection:Faker::Date.between(from: 1.years.ago, to: Date.today),
         certificate_of_inspection:Faker::Number.number(digits: 6),

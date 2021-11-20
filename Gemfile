@@ -22,6 +22,10 @@ gem 'devise', '~> 4.8'
 
 gem 'chartkick', '~> 4.1'
 
+gem 'excon'
+
+gem 'sendgrid-ruby'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -52,15 +56,15 @@ gem 'magnific-popup-rails', '~> 1.1'
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'figaro'     
 
-gem 'multiverse'
+gem 'secondbase'
 gem 'pg'
 gem 'whenever', require: false
-
 gem 'bootsnap', '>= 1.1.0', require: false
-
+gem 'slack-notifier'
 
 gem 'ed25519', '~> 1.2', '>= 1.2.4'
 gem 'bcrypt_pbkdf', '~> 1.0.0.alpha1'
+gem 'google-cloud-text_to_speech', '~> 1.2', '>= 1.2.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -97,3 +101,8 @@ gem 'faker'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "jquery-datatables", "~> 1.10"
+
+gem "twilio-ruby"
+gem "zendesk_api"
+gem 'capistrano-passenger'
+gem 'figaro'

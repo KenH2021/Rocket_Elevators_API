@@ -33,7 +33,7 @@
 
   <div class="field form-group">
     <%= form.label :status %>
-    <%= form.text_field :status,class:"form-control col-6",placeholder:"Status of Elevator" ,style: "width: 300px;" %>
+    <%= form.select :status, ["Online", "Offline", "Intervention" ] %>
   </div>
 
   <div class="field form-group">

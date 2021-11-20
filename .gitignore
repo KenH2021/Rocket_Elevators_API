@@ -4,6 +4,9 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+sendgrid.env
+application.yml
+
 # Ignore bundler config.
 /.bundle
 
@@ -28,6 +31,7 @@ database.yml
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+key.env
 
 
 # Ignore application configuration

@@ -131,5 +131,12 @@ $(document).ready(function(){
     function radioText(){
        
         document.getElementById("results").value = $('input[name="building_btn"]:checked').val();
-    }
+        document.getElementById("results2").value = $('input[name="service_btn"]:checked').val();
+}
+
+    // function packageOption(){
+       
+    //     document.getElementById("results2").value = $('input[name="service_btn"]:checked').val();
+    // }
+
 

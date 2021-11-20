@@ -134,20 +134,21 @@
 								</section>
 								
 								<div id="package-selection-button" class="col-md-8 col-sm-8" class="display">
+
 									<h4>Which Package Are You Going For?</h4>
 
 									<div class="form-check">
-										<input class ="form-check-input" id="standard" type="radio" name="selection_btn" value="standard">
+										<input class ="form-check-input" id="standard" type="radio" name="service_btn" value="standard">
 										<label class="form-check-label" for="standard">Standard Package<span class="text-muted" style="font-size: 75%"> (7,565$/Elevator) </span></label>	
 									</div>
 
 									<div class="form-check">
-										<input class ="form-check-input" id="premium" type="radio" name="selection_btn" value="premium">
+										<input class ="form-check-input" id="premium" type="radio" name="service_btn" value="premium">
 										<label class="form-check-label" for="premium">Premium Package<span class="text-muted" style="font-size: 75%"> (12,345$/Elevator) </span></label>	
 									</div>
 									
 									<div class="form-check">
-										<input class ="form-check-input" id="excelium" type="radio" name="selection_btn" value="excelium">
+										<input class ="form-check-input" id="excelium" type="radio" name="service_btn" value="excelium">
 										<label class="form-check-label" for="excelium">Excelium Package<span class="text-muted" style="font-size: 75%"> (15,400$/Elevator) </span></label>	
 									</div>
 											
@@ -180,7 +181,29 @@
 									</div>
 								  <input type="text" label= "results" id="results" size="20" hidden> 
 									<div class="actions">
+
+									<div>
+										<%= form.hidden_field :type_of_service, id:"results2" %> 
+									</div>
+								  <input type="text" label= "results2" id="results2" size="20" hidden> 
+									<div class="actions">
+
+									
 									<br>
+								<div class="row">
+									<div class="col-md-6">
+										<label for="contact:company_name">Company Name</label>
+										<%= form.text_field :company_name %>
+									</div>
+						
+									<div class="col-md-6">
+										<label for="contact:company_name">Company Email</label>
+										<%= form.text_field :company_email %>
+									</div>
+								</div>
+
+									
+
 									<%=form.text_field :user_id, id: :quote_user_id, class:"form-control", value: current_user.id, type: :hidden%>
 										<%= form.submit class:"btn btn-primary", :onclick => "radioText()" %>
                         		
