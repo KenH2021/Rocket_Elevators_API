@@ -32,7 +32,7 @@ for i in 0...number_and_street.length()
     addresses.save
 end
 
-75.times do
+130.times do
     leads = Lead.new(
         full_name_contact:Faker::Name.name ,
         company_name:Faker::Company.name,
