@@ -54,6 +54,7 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
 gem 'popper_js', '~> 2.9', '>= 2.9.3'
 gem 'magnific-popup-rails', '~> 1.1'
 gem 'jquery-turbolinks', '~> 2.1'
+gem 'figaro'     
 
 gem 'secondbase'
 gem 'pg'

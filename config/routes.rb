@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :fact_interventions
   get 'voice_report/report'
   resources :elevators
   resources :columns
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   resources :leads
   resources :quotes
   resources :employees
+  get '/maps', to:'maps#index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   

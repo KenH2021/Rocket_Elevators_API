@@ -10,6 +10,12 @@ title = Array["CEO","Director","Assistant Director" ,"Captain","Captain","Engine
 email = Array["nicolas.genest@codeboxx.biz","nadya.fortier@codeboxx.biz","martin.chantal@codeboxx.biz","mathieu.houde@codeboxx.biz","patrick.thibault@codeboxx.biz","david.boutin@codeboxx.biz","mathieu.lortie@codeboxx.biz","thomas.carrier@codeboxx.biz","serge.savoie@codeboxx.biz","francis.patry-jessop@codeboxx.biz","mathieu.lefrancois@codeboxx.biz","david.larochelle@codeboxx.biz","nicolas.pineault@codeboxx.biz","david.amyot@codeboxx.biz","remi.gagnon@codeboxx.biz","timothy.wever@codeboxx.biz","kiril.kleinerman@codeboxx.biz","emmanuela.derilus@codeboxx.biz","abdul.akeeb@codebozz.biz","krista.sheely@codeboxx.biz","jonathan.murray@codeboxx.biz"]
 
 
+for i in 0...first_name.length()
+    employees = Employee.new(first_name:first_name[i], last_name:last_name[i], title:title[i], email:email[i]
+    )
+    employees.save
+ 
+end
 
 for i in 0...number_and_street.length()
     addresses = Address.new(
@@ -26,11 +32,6 @@ for i in 0...number_and_street.length()
     addresses.save
 end
 
-for i in 0...first_name.length()
-    employees = Employee.new(first_name:first_name[i], last_name:last_name[i], title:title[i], email:email[i]
-    )
- 
-end
 75.times do
     leads = Lead.new(
         full_name_contact:Faker::Name.name ,
@@ -77,35 +78,40 @@ end
     building_details = BuildingDetail.new(
         information_key: "Contruction Year", 
         value: Faker::Number.between(from: 1980, to: 2020) ,
-        building_id: buildings.id
+        building_id: buildings.id,
+        number_of_floors: Faker::Number.between(from: 5, to: 100),
+        department: leads.department ,
+        year_of_contruction:Faker::Number.between(from: 1980, to: 2020) ,
+        maximum_number_of_occupants: Faker::Number.between(from: 5, to: 200),
         )
     building_details.save
     batteries = Battery.new(
-        Type:["Residential", "Commercial", "Corporate", "Hybrid"].sample ,
-        Status:["Online","Offline","Moving","Idle"].sample,
+        Type:["Residential","Commercial","Corporate","Hybrid"].sample,
+        Status:["Online","Offline","Intervention"].sample,
         Operation_Certificate:Faker::Lorem.paragraph,
         Information:Faker::Lorem.paragraph,
         Notes:Faker::Lorem.paragraph,
         building_id:buildings.id,
-        employee_id:employees.id
+        employee_id:employees.id,
+        Creation_Date:Faker::Date.between(from: 3.years.ago, to: 2.years.ago),
+        Last_Inspect:Faker::Date.between(from: 2.years.ago, to: Date.today),
         )
     batteries.save
     columns = Column.new(
         battery_id: batteries.id,
         type_of_building: ["Residential", "Commercial", "Corporate", "Hybrid"].sample ,
         number_of_floors_served: Faker::Number.between(from: 5, to: 100),
-        status:["Online","Online","Online","Online","Online","Online","Online","Online","Online","Offline"].sample ,
+        status:["Online","Offline","Intervention"].sample,
         information:Faker::Lorem.sentence ,
         notes:Faker::Lorem.paragraph  ,
         )
     columns.save
-
     elevators = Elevator.new(
         column_id:columns.id,
         serial_number:Faker::Number.number(digits: 9),
         model:["Standard ","Premium","Excelium"].sample,
         type_of_building:["Residential ","Commercial","Corporate","Hybrid"].sample,
-        status:["Online","Offline","Intervention"].sample,
+        status:["Online","Offline","Intervention","Idle"].sample,
         date_of_commissioning:Faker::Date.between(from: 3.years.ago, to: Date.today),
         date_of_last_inspection:Faker::Date.between(from: 1.years.ago, to: Date.today),
         certificate_of_inspection:Faker::Number.number(digits: 6),

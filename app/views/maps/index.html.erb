@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    
+</head>
+<style>
+    #map {
+      height: 100%;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+</style>
+<%= javascript_include_tag 'maps', 'data-turbolinks-track': 'reload' %>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY']%>&callback=initMap"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+        
+
+        function initMap(){
+        // Map options
+        var options = {
+            zoom:8,
+            center:{lat:45.5259952,lng:-73.5976184 }
+        }
+
+        // New map
+        var map = new google.maps.Map(document.getElementById('map'), options);
+
+        // Array of markers
+        var markers = [];
+        var lat;
+        var lng;
+        geocode();
+
+        function geocode(){ 
+        var location = '<%= raw @location %>';
+        var location_split = location.split(',');
+	    var floors = '<%= @floors %>';
+        var floors_split = floors.split(',');
+	    var names= '<%= raw @names %>';
+        var names_split = names.split(',');
+	    var nb_batteries=  '<%= @nb_batteries %>';
+        var batteries_split = nb_batteries.split(',');
+        var nb_columns= '<%= @nb_columns %>';
+        var columns_split = nb_columns.split(','); 
+	    var nb_elevators =  '<%= @nb_elevators %>';
+        var elevators_split = nb_elevators.split(',');
+	    var tech_name =  '<%= raw @tech_name %>';
+        var tech_name_split = tech_name .split(',');
+        
+        console.log(floors);
+        console.log(names_split);
+        console.log(nb_batteries);
+        console.log(nb_columns);
+        console.log(nb_elevators);
+        console.log(tech_name);
+        console.log(location_split);
+        
+        for (let i = 0; i < location_split.length; i++) {
+            axios.get("https://maps.googleapis.com/maps/api/geocode/json?&key=<%= ENV['GOOGLE_API_KEY']%>",{
+                params:{
+                    address: location_split[i]
+                }
+            
+            })
+            
+            .then(function(response){
+                console.log(response);
+                var coords = response.data.results[0].geometry.location;
+                lat = response.data.results[0].geometry.location.lat;
+                lng = response.data.results[0].geometry.location.lng;
+                
+                addMarker({
+                    coords: {lat: lat , lng: lng},
+                    content: ('<h6> Client Name:</h6>' + names_split[i]+'<h6> Location:</h6>' + location_split[i] +'<h6> Tech Name:</h6>' + tech_name_split[i] 
+                    + '<h6> Floors:</h6>' + floors_split[i] + '<h6> Columns:</h6>' + columns_split[i] + '<h6> Batteries:</h6>' + batteries_split[i] +
+                    '<h6> Elevators:</h6>' + elevators_split[i]
+
+                    )
+                });
+                console.log(lng , lat);
+
+
+            }) 
+            .catch(function(error){
+                console.log(error);
+            })
+             
+        };
+          
+        
+    }
+  
+
+    // Loop through markers
+    for(var i = 0;i < markers.length;i++){
+        // Add marker
+        addMarker(markers[i]);
+    }
+
+    // Add Marker Function
+    function addMarker(props){
+        var marker = new google.maps.Marker({
+        position:props.coords,
+        map:map
+        });
+
+        // Check for customicon
+        if(props.iconImage){
+        marker.setIcon(props.iconImage);
+        }
+
+        // Check content
+        if(props.content){
+        var infoWindow = new google.maps.InfoWindow({
+            content:props.content
+        });
+
+        marker.addListener('click', function(){
+            infoWindow.open(map, marker);
+        });
+        }
+    }
+}
+
+</script>
+<body>
+    
+    <div id="map" style="height:800px"></div>
+    
+</body>
+</html>

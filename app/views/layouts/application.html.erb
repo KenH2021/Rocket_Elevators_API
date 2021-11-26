@@ -133,35 +133,6 @@
 		<%= javascript_include_tag 'contact', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_include_tag 'FormScript', 'data-turbolinks-track': 'reload' %>
 
-		<!-- 
-			GMAP.JS 
-			http://hpneo.github.io/gmaps/
-		-->
-		<script src="//maps.google.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
-		<%= javascript_include_tag 'gmaps', 'data-turbolinks-track': 'reload' %>
-		<script>
-
-			jQuery(document).ready(function(){
-
-				/**
-					@BASIC GOOGLE MAP
-				**/
-				var map2 = new GMaps({
-					div: '#map2',
-					lat: 46.8428912489231,
-					lng: -71.27971089510372,
-					scrollwheel: false
-				});
-
-				var marker = map2.addMarker({
-					lat: 46.8428912489231,
-					lng: -71.27971089510372,
-					title: 'CodeBoxx'
-				});
-
-			});
-
-		</script>
 
 	</body>
 </html>
