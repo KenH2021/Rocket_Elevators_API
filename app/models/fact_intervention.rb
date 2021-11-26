@@ -1,2 +1,2 @@
-class FactIntervention < ApplicationRecord
+class FactIntervention < SecondBase::Base
 end
