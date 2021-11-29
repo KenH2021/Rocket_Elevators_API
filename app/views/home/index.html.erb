@@ -921,10 +921,9 @@
 									<div class="row">
 											<div class="col-md-12">
 												<label for="contact:attachment">File Attachment</label>
-												<%= form.file_field :attachments, multiple: true, direct_upload: true %>
+												<%= form.file_field :file, multiple: true, direct_upload: true %>
 
 												<!-- custom file upload -->
-												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="attachment" data-btn-text="Select a File" />
 												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
 
 											</div>

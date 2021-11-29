@@ -1,24 +1,28 @@
 
 default: &default
+  adapter: mysql2
   encoding: utf8
+  host: localhost
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  
+  username: root
+  password: root123456
+  # port: 3306
 
 development:
   <<: *default
   database: Rocket_Elevators_Information_System_development
-  adapter: mysql2
-  socket: /var/run/mysqld/mysqld.sock
-  username: root  
-  password: rootuser
 
-production: #les infos pour mysql
+
+test:
+  <<: *default
+  database: Rocket_Elevators_Information_System_test
+
+
+production:
   <<: *default
   database: Rocket_Elevators_Information_System_production
-  username: Rocket_Elevators 
+  username: Rocket_Elevators
   password: <%= ENV['qetuo2468'] %>
-  adapter: mysql2
-  socket: /var/run/mysqld/mysqld.sock
 
 postgres_db_development:
   <<: *default
